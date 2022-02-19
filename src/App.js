@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from 'react';
+import Header from './components/include/header';
+import Footer from './components/include/footer';
+import Produits from './components/views/produits';
+import Newsletter from './components/views/newsletter';
+import Home from './components/views/home';
+import Shops from './components/views/shop';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+  render(){
+    return(
+      
+      <div>
+        <Header />
+        <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/produits' element={<Produits />} />
+          <Route path='/shops' element={<Shops />} />
+          <Route path='/newsletter' element={<Newsletter />} />
+        </Routes>
+        </BrowserRouter>
+        <Footer />
+      </div>
+    );
+  }
 }
-
 export default App;
