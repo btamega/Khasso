@@ -175,7 +175,7 @@ const home = () => {
        
        
       
-       <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+       <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog">
                <div className="modal-dialog" role="document">
                    <div className="modal-content">
                        <div className="modal-header">
@@ -255,7 +255,7 @@ const home = () => {
                                                        <i className="ti-minus"></i>
                                                    </button>
                                                </div>
-                                               <input type="text" name="quant[1]" className="input-number"  data-min="1" data-max="1000" value="1" />
+                                               <input type="text" name="quant[1]" className="input-number"  data-min="1" data-max="1000"  />
                                                <div className="button plus">
                                                    <button type="button" className="btn btn-primary btn-number" data-type="plus" data-field="quant[1]">
                                                        <i className="ti-plus"></i>

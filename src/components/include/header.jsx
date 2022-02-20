@@ -1,5 +1,12 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
+const closeNav= () =>{
+    document.getElementById("category").style.visibility="hidden";
+};
+const openNav= () =>{
+document.getElementById("category").style.visibility="visible";
+};
+
 const header = () => {
   return (
     <div>
@@ -10,16 +17,15 @@ const header = () => {
                         <div className="col-lg-4 col-md-12 col-12">
                             <div className="top-left">
                                 <ul className="list-main">
-                                    <li><i className="ti-headphone-alt"></i> +000 (000) 000-000</li>
-                                    <li><i className="ti-email"></i> therichpost.com</li>
+                                    <li><a href="tel:+33 (605) 703-920"><i className="ti-headphone-alt"></i> +33 (605) 703-920</a></li>
+                                    <li><a href="mailto:karecherif2000@gmail.com"><i className="ti-email"></i> karecherif2000@gmail.com</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div className="col-lg-8 col-md-12 col-12">
                             <div className="right-content">
                                 <ul className="list-main">
-                                    <li><i className="ti-location-pin"></i> Store location</li>
-                                    <li><i className="ti-alarm-clock"></i> <a href="#">Daily deal</a></li>
+                                    <li><a target={'_blank'} href="https://web.facebook.com/Khassodesign-112125716933890"><i className="ti-facebook"></i> KhassoDesign</a></li>
                                     <li><i className="ti-user"></i> <a href="#">My account</a></li>
                                     <li><i className="ti-power-off"></i><a href="#">Login</a></li>
                                 </ul>
@@ -33,7 +39,7 @@ const header = () => {
                     <div className="row">
                         <div className="col-lg-2 col-md-2 col-12">
                             <div className="logo">
-                                <a href="#">Jassa</a>
+                                <a href="/"><img style={{marginTop:"-22px"}} src="assets\images\WhatsApp Image 2021-11-15 at 19.45.55.jpeg" alt="" /></a>
                             </div>
                             <div className="search-top">
                                 <div className="top-search"><a href="#0"><i className="ti-search"></i></a></div>
@@ -114,8 +120,10 @@ const header = () => {
                         <div className="row">
                             <div className="col-lg-3">
                                 <div className="all-category">
-                                    <h3 className="cat-heading"><i className="fa fa-bars" aria-hidden="true"></i>CATEGORIES</h3>
-                                    <ul className="main-category">
+                                    <h3 onClick={openNav} className="cat-heading">
+                                    <a  className='closebtn' onClick={closeNav}>&times;</a>
+                                      <i className="fa fa-bars" aria-hidden="true"></i>CATEGORIES</h3>
+                                    <ul id='category' className="main-category">
                                         <li><a href="#">New Arrivals <i className="fa fa-angle-right" aria-hidden="true"></i></a>
                                             <ul className="sub-category">
                                                 <li><a href="#">accessories</a></li>
@@ -203,7 +211,7 @@ const header = () => {
                                                                 <li><a href="#">Blog Single Sidebar</a></li>
                                                             </ul>
                                                         </li>
-                                                        <li><a href="#">Contact Us</a></li>
+                                                        <li><a href="/contact">Contact Us</a></li>
                                                     </ul>
                                             </div>
                                         </div>
@@ -217,7 +225,9 @@ const header = () => {
             </div>
                 
         </header>
+        
     </div>
+    
   )
 }
 
