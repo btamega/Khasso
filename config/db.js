@@ -1,15 +1,19 @@
-require('dotenv').config();
-const mongo =require('mongoose');
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://btamega:Oussoubidiagna1@khassodesign.o02oy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
-const connectDB = async()=>{
-    try{
-        await mongo.connect(process.env.MONGO_URI,{
-            useNewUrlParser: true
-        })
-        console.log("MongoDB connection success");
-    }catch(error){
-        console.error("MongoDB connection fail");
-        process.exit(1);
-    }
-};
-module.exports = connectDB;
+const connectDB=async()=>{
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+    client.connect(error => {
+        try{
+      const collection = client.db("test").collection("devices");
+      console.log("MongoDB connection success");
+        }catch(error){
+            console.error("MongoDB connection fail");
+            client.close();
+        }
+      
+    });
+}
+
+
+module.exports=connectDB
