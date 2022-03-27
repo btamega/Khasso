@@ -8,7 +8,7 @@ const productSchema= new mongoose.Schema({
         type:String,
         required:true
     },
-    price:{
+    prix:{
         type: Number,
         required: true
     },
@@ -21,5 +21,5 @@ const productSchema= new mongoose.Schema({
         required:true
     }
 })
-const Product = mongoose.model('product',productSchema);
+const Product = mongoose.model('Product',productSchema);
 module.exports=Product;
